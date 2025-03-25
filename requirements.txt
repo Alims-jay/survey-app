@@ -1,0 +1,11 @@
+# Core Libraries
+flask==2.3.2
+pymongo==4.3.3
+python-dotenv==1.0.0
+
+# Data Processing & CSV
+pandas==2.0.3
+
+# Visualization
+matplotlib==3.7.2
+jupyter==1.0.0

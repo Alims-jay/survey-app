@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .survey-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #495057;
+        }
+        .btn-submit {
+            background-color: #3498db;
+            border: none;
+            width: 100%;
+            padding: 0.5rem;
+            font-weight: 500;
+        }
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+        .expense-category {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background-color: #f1f8fe;
+            border-radius: 5px;
+        }
+        .expense-category label {
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h1 class="form-title">Healthcare Spending Survey</h1>
+        <form method="POST">
+            <!-- Basic Info -->
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="total_income" class="form-label">Total Income ($)</label>
+                <input type="number" step="0.01" class="form-control" id="total_income" name="total_income" required>
+            </div>
+
+            <!-- Expenses -->
+            <h5 class="mt-4 mb-3">Expense Categories</h5>
+
+            <div class="expense-category">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="utilities_check" name="utilities_check">
+                    <label class="form-check-label" for="utilities_check">Utilities</label>
+                </div>
+                <input type="number" step="0.01" class="form-control mt-2" id="utilities_amount" name="utilities_amount" placeholder="Amount spent ($)">
+            </div>
+
+            <div class="expense-category">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="entertainment_check" name="entertainment_check">
+                    <label class="form-check-label" for="entertainment_check">Entertainment</label>
+                </div>
+                <input type="number" step="0.01" class="form-control mt-2" id="entertainment_amount" name="entertainment_amount" placeholder="Amount spent ($)">
+            </div>
+
+            <div class="expense-category">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="school_fees_check" name="school_fees_check">
+                    <label class="form-check-label" for="school_fees_check">School Fees</label>
+                </div>
+                <input type="number" step="0.01" class="form-control mt-2" id="school_fees_amount" name="school_fees_amount" placeholder="Amount spent ($)">
+            </div>
+
+            <div class="expense-category">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="shopping_check" name="shopping_check">
+                    <label class="form-check-label" for="shopping_check">Shopping</label>
+                </div>
+                <input type="number" step="0.01" class="form-control mt-2" id="shopping_amount" name="shopping_amount" placeholder="Amount spent ($)">
+            </div>
+
+            <div class="expense-category">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="healthcare_check" name="healthcare_check">
+                    <label class="form-check-label" for="healthcare_check">Healthcare</label>
+                </div>
+                <input type="number" step="0.01" class="form-control mt-2" id="healthcare_amount" name="healthcare_amount" placeholder="Amount spent ($)">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit mt-4">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
