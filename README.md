@@ -21,7 +21,7 @@ A Flask-based web application to collect and analyze income/spending data, with 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/healthcare-survey-tool.git
+git clone https://github.com/Alims-jay/survey-app.git
 cd healthcare-survey-tool
 ```
 
@@ -106,8 +106,8 @@ Open `analysis.ipynb` to view and interact with data visualizations.
 ssh -i "your-key.pem" ubuntu@ec2-ip-address
 
 # Clone and set up project
-git clone https://github.com/yourusername/healthcare-survey-tool.git
-cd healthcare-survey-tool
+git clone https://github.com/Alims-jay/survey-app.git
+cd survey-app
 pip install -r requirements.txt
 
 # Run with Gunicorn
@@ -126,12 +126,12 @@ Add the following configuration:
 
 ```ini
 [Unit]
-Description=Healthcare Survey App
+Description=Survey App
 After=network.target
 
 [Service]
 User=ubuntu
-WorkingDirectory=/home/ubuntu/healthcare-survey-tool
+WorkingDirectory=/home/ubuntu/survey-app
 ExecStart=/usr/bin/gunicorn app:app -b 0.0.0.0:80
 Restart=always
 
@@ -149,7 +149,7 @@ sudo systemctl enable survey
 ## Project Structure
 
 ```
-healthcare-survey-tool/
+survey-app/
 ├── app.py                # Flask application
 ├── process_data.py       # Data processing script
 ├── analysis.ipynb        # Jupyter notebook for visualization
